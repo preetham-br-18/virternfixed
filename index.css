@@ -1,0 +1,135 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', 'Fira Sans', Ubuntu, Oxygen, sans-serif;
+    color: #191919;
+    background-color: #F4F2EE;
+    -webkit-font-smoothing: antialiased;
+    scroll-behavior: smooth;
+  }
+}
+
+:root {
+  --linkedin-blue: #0A66C2;
+  --linkedin-blue-hover: #004182;
+  --linkedin-bg: #F4F2EE;
+  --linkedin-card: #FFFFFF;
+  --linkedin-border: #E0DFDC;
+  --linkedin-text: #191919;
+  --linkedin-subtext: #666666;
+  --linkedin-green: #057642;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(10, 102, 194, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(10, 102, 194, 0);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes badgePulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.08);
+    opacity: 0.85;
+  }
+}
+
+.animate-slideUp {
+  animation: slideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-scaleIn {
+  animation: scaleIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-badgePulse {
+  animation: badgePulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.animate-pulseGlow {
+  animation: pulseGlow 2.5s infinite;
+}
+
+.animate-shimmer {
+  background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0) 100%);
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+@media print {
+  header, footer, nav, button, .no-print {
+    display: none !important;
+  }
+
+  body {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+  }
+
+  #printable-certificate {
+    border: 6px solid #1e1b4b !important;
+    page-break-inside: avoid;
+    box-shadow: none !important;
+    margin: 0 auto !important;
+  }
+
+  #printable-guide, #printable-offer {
+    box-shadow: none !important;
+    border: none !important;
+    padding: 0 !important;
+    margin: 0 auto !important;
+  }
+}
